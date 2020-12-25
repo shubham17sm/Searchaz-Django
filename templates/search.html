@@ -1,0 +1,55 @@
+{% block content %}
+<html>
+
+<head>
+    <title>Scraper Website</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>You have searched for: {{title_qs}}</h1>
+    <!-- <table style="width:100%">
+            <tr>
+              <th>Title</th>
+              <th>URL</th>
+            </tr>
+            {% for item in result %}
+            <tr>
+              <td>{{item.title}}</td>
+              <td><a href="{{item.url}}" target="_blank">URL</a></td>
+            </tr>
+            {% endfor %}
+          </table> -->
+
+    <table style="width:100%">
+        <tr>
+            <th>Key</th>
+            <th>Title</th>
+            <th>URL</th>
+        </tr>
+        {% for key, value in result %}
+        <tr>
+            <td>{{key}}</td>
+            <td>{{value.title}}</td>
+            <td><a href="{{value.url}}" target="_blank">URL</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h3><a href="{% url 'index' %}">Go back to homepage</a></h3>
+</body>
+
+</html>
+{% endblock content%}

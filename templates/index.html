@@ -1,0 +1,19 @@
+{% load crispy_forms_tags %}
+{% block content %}
+<html>
+    <head>
+        <title>
+            Search Something
+        </title>
+    </head>
+    <body>
+        <h1>SearchAZ</h1>
+        <form action="{{query}}/{{num}}" method="POST">
+            {%csrf_token%}
+            {{form|crispy}}
+            <br>
+            <input type="submit" class="btn btn-primary"></input>
+        </form>
+    </body>
+</html>
+{% endblock content %}
