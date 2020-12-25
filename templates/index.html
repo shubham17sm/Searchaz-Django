@@ -14,13 +14,19 @@
 </head>
 
 <body>
-    <h1>SearchAZ</h1>
-    <form action="{{query}}/{{num}}" method="POST">
-        {%csrf_token%}
-        {{form|crispy}}
-        <br>
-        <input type="submit" class="btn btn-primary"></input>
-    </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 pt-4">
+                <h1>SearchAZ</h1>
+                <form action="{{query}}/{{num}}" method="POST">
+                    {%csrf_token%}
+                    {{form|crispy}}
+                    <br>
+                    <input type="submit" class="btn btn-primary"></input>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
